@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
+import { Box } from '../theme/Box';
 
 export const Section =({title, children}) => {
    return (<>
-   <h2>{title}</h2>
+   <Box as='h2' mb='10px'>{title}</Box>
     {children}
     </>)
 }

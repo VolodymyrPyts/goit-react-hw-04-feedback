@@ -6,7 +6,7 @@ import {StatisticsList} from "./StatisticsList"
 export const Statistics =({option, list, total, onPositivePercentage}) => {
 
 return (
-    <Box>
+    <Box >
 <StatisticsList option={option} list ={list} total={total} onPositivePercentage={onPositivePercentage}  />
     </Box>
 )

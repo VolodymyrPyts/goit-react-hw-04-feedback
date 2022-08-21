@@ -1,4 +1,4 @@
-
+import { Box } from './theme/Box';
 
 import { Component } from "react";
 import {FeedbackOptions } from "./FeedbackOptions/FeedbackOptions"
@@ -35,12 +35,14 @@ export class App extends Component {
   render(){
 
     const keyObject = Object.keys(this.state)
-    return <>
-    <Section title="Please leave feedback">
+    return <Box p='15px' backgroundColor='#d4d3d3bc' width='300px'>
+      <Box mb='20px'>
+        <Section title="Please leave feedback">
       <FeedbackOptions  
         option={keyObject}
         onLeaveFeedback={this.onLeaveFeedback}/>
     </Section>
+    </Box>
     <Section title="Statistic">
     {this.countTotalFeedback()
     ? <Statistics
@@ -51,7 +53,7 @@ export class App extends Component {
         : <Notification message="There is no feedback"/>}
     </Section>
     
-    </>
+    </Box>
   }
 
 };

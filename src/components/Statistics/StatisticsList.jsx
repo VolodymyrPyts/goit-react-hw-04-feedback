@@ -1,14 +1,19 @@
 import PropTypes from 'prop-types';
+import { Box } from '../theme/Box';
 
 export const StatisticsList = ({option, list, total, onPositivePercentage }) => {
     return (
         <>
-        {option.map((item, idx) => (
+            <Box display='flex' gridGap='10px' mb='20px' >
+                {option.map((item, idx) => (
             <p key ={idx}>{item} : <span>{list[item]}</span></p>
         ))}
+        </Box>
 
-        <p>Total : {total} </p>
+            <Box display='flex' gridGap='10px'>
+                <p>Total : {total} </p>
         <p>Positive feedback : {onPositivePercentage} %</p>
+        </Box>
         </>
     )
 }

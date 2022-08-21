@@ -1,13 +1,15 @@
 import PropTypes from 'prop-types';
 
+import { ButtonFb } from "./ButtonFeedback.styled";
+
 export const ButtonFeedback = ({option, onLeaveFeedback}) => {
 
     return (
     <div>
        {option.map(item => (
-        <button type="button" onClick={onLeaveFeedback} name={item} key={item} >
+        <ButtonFb type="button" onClick={onLeaveFeedback} name={item} key={item} >
             {item}
-        </button>
+        </ButtonFb>
     ))}
     </div>
 )}
