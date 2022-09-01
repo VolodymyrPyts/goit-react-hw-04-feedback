@@ -1,24 +1,18 @@
 import { Box } from 'components/theme/Box';
 import PropTypes from 'prop-types';
 
-export const Statistics = ({
-  good,
-  neutral,
-  bad,
-  total,
-  onPositivePercentage,
-}) => {
+export const Statistics = ({ feedback, total, onPositivePercentage }) => {
   return (
     <>
       <Box display="flex" gridGap="10px" mb="20px">
         <p>
-          Good : <span>{good}</span>
+          Good : <span>{feedback.good}</span>
         </p>
         <p>
-          Neutral : <span>{neutral}</span>
+          Neutral : <span>{feedback.neutral}</span>
         </p>
         <p>
-          Bad : <span>{bad}</span>
+          Bad : <span>{feedback.bad}</span>
         </p>
       </Box>
 
@@ -31,8 +25,7 @@ export const Statistics = ({
 };
 
 Statistics.propTypes = {
-  option: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
-  list: PropTypes.objectOf(PropTypes.number).isRequired,
+  feedback: PropTypes.objectOf(PropTypes.number).isRequired,
   total: PropTypes.number.isRequired,
-  positivePercentage: PropTypes.number.isRequired,
+  onPositivePercentage: PropTypes.number.isRequired,
 };
